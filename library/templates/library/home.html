@@ -1,0 +1,57 @@
+{% load static%}
+
+<!DOCTYPE hmlt>
+<html>
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+      <link rel="stylesheet" type="text/css" href="{% static 'library/main.css' %}">
+
+      <title> Library Management</title>
+      <style>
+            h1{text-align : center; font-size:50px}
+            h2{text-align : center; font-size:20px}
+            #bg{
+                  background-size: 1800px 900px;
+                  background-repeat: no-repeat;
+                  background-position: top;
+                  background-attachment: fixed;
+              }
+              
+      </style>
+</head>
+
+<body id="bg" style="background-image: url('{% static "library\media\library.jpg"%}')";>
+
+      
+
+      <header class="site-header">
+            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+                  <div class="container">
+                        <a class="navbar-brand mr-4" href="{% url 'library-home' %}">Library Management System</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarToggle">
+                              <div class="navbar-nav mr-auto">
+                              <a class="nav-item nav-link" href="{% url 'library-home' %}">Home</a>
+                              <a class="nav-item nav-link" href="{% url 'library-library_admin' %}">Admin</a>
+                              <a class="nav-item nav-link" href="{% url 'library-customerregister' %}">Customer's Registration</a>
+                              <a class="nav-item nav-link" href="{% url 'library-customerlogin' %}">Customer's Login</a>
+                              </div>
+                              
+                              </div>
+                        </div>
+                  </div>
+            </nav>
+      </header>
+      
+      
+
+
+</body>
+</html>

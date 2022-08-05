@@ -1,0 +1,44 @@
+{% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'library/main.css' %}">
+
+<div class="container mt-4">
+      <h1 class="text-center"><u>Books List</u></h1>
+      <table class="table table-hover" id="example">
+          <thead>
+              <tr class="text-center">
+                  <th>c_id</th>
+                  <th>edition</th>
+                  <th>ISBN</th>
+                  <th>volumne</th>
+                  <th>author</th>
+                  <th>availabilitiy</th>
+                  <th>book name</th>
+                  <th>price</th>
+                  <th>delete</th>
+                  
+              </tr>
+          </thead>
+          <tbody>
+              {% for b in books %}
+              <tr class="text-center">
+                  <td>{{forloop.counter}}.</td>
+                  <td>{{b.c_id}}.</td>
+                  <td>{{b.edition}}</td>
+                  <td>{{b.ISBN}}</td>
+                  <td>{{b.volumne}}</td>
+                  <td>{{b.author}}</td>
+                  <td>{{b.available}}</td>
+                  <td>{{b.book_name}}</td>
+                  <td>{{b.price}}</td>
+                  <td><a href="/librarydelete_customer/{{b.id}}/" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this book?')">Delete</a></td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+      </div>
