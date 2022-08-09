@@ -1,0 +1,31 @@
+
+{% load static %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="{% static 'library/main.css' %}">
+
+
+<div class="container">
+<br>
+<h1 class="text-center"><u>Customer Login</u></h1>
+    <form method="POST"> {% csrf_token %}
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Username</i></label>
+            <input type="text" class="form-control mt-2" name="username" placeholder="Enter Username" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Password</i></label>
+            <input type="password" class="form-control mt-2" name="password" placeholder="Enter Password" required>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary mt-4">Login</button>
+</div>
